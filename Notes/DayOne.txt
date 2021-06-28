@@ -1,0 +1,97 @@
+
+Phase 3:
+
+	NPM and Node
+	NodeJS (Server Side JavaScript Framework)
+	ExpressJS (Web Development JavaScript Framework)
+	Socket.io (Client-Server Architecture)
+
+-------------------------------------
+
+NodeJS:
+
+	- NodeJS is a Server Side JavaScript Framework.
+	- NodeJS provides runtime environment to JavaScript.
+	- NodeJS handles the request in asynchronous nature.
+	- Helps in creating web server and communicating with clients. 
+	- Helps in rendering request-response cycle.
+	- Helps in communicating with File System.
+	- Helps in communicating with database.
+	- Helps in communicating with Network.
+
+--------------------------------------
+
+Node Modules:
+	
+	Node.js includes three types of modules:
+	
+		1. Core Modules (Built-In modules)
+		2. Local Modules
+		3. Third-Party Modules
+
+----------------------------------------
+
+Node Web Server: http core module
+
+Node File System: fs core module
+
+----------------------------------------	
+	
+-- To start Mongo Server:
+
+	mongod
+	
+	Default Port: 27017
+	Default Folder Path: c:/data/db
+
+-- To connect Mongo client to Mongo Server
+
+	mongo
+
+----------------------------------------
+
+-- To show databases:
+
+	show dbs;
+	
+-- To create or use your own database:
+
+	use simplilearndb;
+	
+-- To check the database in which you are currently working:
+
+	db
+	
+-- To create new collection in database:
+
+	db.createCollection('users');
+	
+-- To get the list of collections:
+
+	show collections;
+	
+-- Insert documents into `users` collection:
+
+	db.users.insert({ "name": "King Kochhar", "gender": "Male" })
+	db.users.insert({ "name": "John Smith", "gender": "Male" })
+	db.users.insert({ "name": "Sarah Bowling", "gender": "Female" })
+	
+-- To fetch all documents from 'users' collection:
+
+	db.users.find();
+	
+---------------------------------------------
+
+	Create 'employees' collection
+	
+	db.createCollection('employees');
+	
+	Add Four documents (name, age, gender, salary)
+	
+	db.employees.insert({ "name": "King Kochhar", "gender": "Male", "salary": 1200 });
+	db.employees.insert({ "name": "Sarah Bowling", "gender": "Female", "salary": 2200 });
+	db.employees.insert({ "name": "Roger Lee", "gender": "Male", "salary": 4000 });
+	
+	fetch documents
+	
+	db.employees.find().pretty();
