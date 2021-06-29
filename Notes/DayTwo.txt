@@ -1,0 +1,102 @@
+
+MongoDB Fundamentals:
+
+-- To start server
+
+	mongod
+
+-- To connect client to server
+
+	mongo
+	
+-- To check databases
+
+	show dbs
+	
+-- To use existing database or create new database:
+
+	use simplilearndb;
+	
+-- To check the currently used database:
+
+	db
+	
+-- To check collections in database:
+
+	show collections
+	
+-- To create colllection in database:
+
+	db.createCollection('customers');
+	
+-- To insert documents into collection
+
+	db.customers.insert({"name": "King", "age": 34, "amount": 12000});
+	db.customers.insert({"name": "Kochhar", "age": 44, "amount": 22000});
+	db.customers.insert({"name": "Roger", "age": 56, "amount": 30000});
+	db.customers.insert({"name": "Dang", "age": 30, "amount": 42000});
+	db.customers.insert({"name": "Kim", "age": 25, "amount": 10000});
+	
+-- To get the list of customers:
+
+	db.customers.find();
+	db.customers.find().pretty();
+	
+-- To get the customers based on condition:
+
+	db.customers.find({"name": "King"}).pretty();
+	db.customers.find({"age" : 34 }).pretty();
+	
+-- Conditional Operators:
+	
+	db.customers.find({"age" : { $eq: 34 } }).pretty();
+	db.customers.find({"age" : { $ne: 34 } }).pretty();
+	db.customers.find({"age" : { $lt: 34 } }).pretty();
+	db.customers.find({"age" : { $lte: 34 } }).pretty();
+	db.customers.find({"age" : { $gt: 34 } }).pretty();
+	db.customers.find({"age" : { $gte: 34 } }).pretty();
+	
+-- IN Operator:
+
+	db.customers.find({"name" : { $in: ['King', 'Kochhar'] } }).pretty();
+	db.customers.find({"name" : { $nin: ['King', 'Kochhar'] } }).pretty();
+	
+-- Logical Operators:
+
+	OR, AND, NOT
+
+	db.customers.find({ $or: [ {"name": "King"}, { "age": 44 } ] }).pretty();
+	db.customers.find({ $and: [ {"name": "King"}, { "age": 34 } ] }).pretty();
+	db.customers.find({"age" : { $not: { $gte: 34 } } }).pretty();
+	
+-- Update Documents:
+
+	db.customers.updateOne(
+		{"name" : "King"},
+		{ $set: {"age": 50, "amount": 50000 } }
+	);
+	
+	db.customers.updateMany(
+		{"age": {$gt: 30} },
+		{ $set: {"amount": 60000 } }
+	)
+	
+	db.customers.find().pretty();
+	
+-- Delete Documents:
+
+	db.customers.deleteOne({"name" : "King"});
+	
+	db.customers.deleteMany({"amount": 60000});
+
+	db.customers.deleteMany({});
+	
+---------------------------------------------------------
+
+	npm install mongodb
+	
+	npm install mongoose
+	
+	
+	
+	
