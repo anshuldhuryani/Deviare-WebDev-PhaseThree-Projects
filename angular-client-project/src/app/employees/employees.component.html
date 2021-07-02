@@ -1,0 +1,16 @@
+<h3>Employee List</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employeeList">
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.salary }}</td>
+        </tr>
+    </tbody>
+</table>
