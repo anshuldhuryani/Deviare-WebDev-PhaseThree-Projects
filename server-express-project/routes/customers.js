@@ -10,7 +10,7 @@ router.get('/:id', customerController.getCustomerById);
 
 // API Url: http://localhost:3000/customers
 // Header: Content-Type: application/json
-// Response Body: { "name":"King Kochhar", "age":33, "email":"king.kochhar@gmail.com" }
+// Request Body: { "name":"King Kochhar", "age":33, "email":"king.kochhar@gmail.com" }
 router.post('/', customerController.addCustomer);
 
 // API Url: http://localhost:3000/customers/60e2d7bf68838f5b4c1f7298

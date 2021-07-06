@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+        Details of <b>{{ customer.name }}</b>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Customer Id</th>
+                    <td>{{ customer._id }}</td>
+                </tr>
+                <tr>
+                    <th>Customer Name</th>
+                    <td>{{ customer.name }}</td>
+                </tr>
+                <tr>
+                    <th>Customer Email</th>
+                    <td>{{ customer.email }}</td>
+                </tr>
+                <tr>
+                    <th>Customer Age</th>
+                    <td>{{ customer.age }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a routerLink='/customers' class="btn btn-secondary">Back</a> |
+        <a (click)="deleteCustomer()" class="btn btn-danger">Delete</a> |
+        <a class="btn btn-info">Update</a>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<h3>Add New Customer</h3>
+
+<form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Customer Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="customer.name" placeholder="King Kochhar">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Customer Email</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="customer.email"
+            placeholder="king.kochhar@gmail.com">
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Customer Age</label>
+        <input type="text" class="form-control" name="age" [(ngModel)]="customer.age" placeholder="18">
+    </div>
+    <div class="mb-3">
+        <input type="button" value="Add Customer" class="btn btn-dark" (click)="addCustomer()" />
+    </div>
+</form>
