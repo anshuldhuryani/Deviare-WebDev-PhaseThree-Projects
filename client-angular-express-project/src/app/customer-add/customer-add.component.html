@@ -1,18 +1,38 @@
 <h3>Add New Customer</h3>
 
-<form>
+<form #custForm="ngForm" novalidate>
     <div class="mb-3">
         <label for="name" class="form-label">Customer Name</label>
-        <input type="text" class="form-control" name="name" [(ngModel)]="customer.name" placeholder="King Kochhar">
+        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="customer.name"
+            placeholder="King Kochhar" required minlength="4" maxlength="10" />
+        <div *ngIf="name.touched && name.invalid">
+            <div *ngIf="name.errors.required">
+                Name is Required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+                Name must be at least 4 characters long.
+            </div>
+        </div>
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Customer Email</label>
-        <input type="email" class="form-control" name="email" [(ngModel)]="customer.email"
-            placeholder="king.kochhar@gmail.com">
+        <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="customer.email"
+            placeholder="king.kochhar@gmail.com" required />
+        <div *ngIf="email.touched && name.invalid">
+            <div *ngIf="name.errors.required">
+                Email is Required.
+            </div>
+        </div>
     </div>
     <div class="mb-3">
         <label for="age" class="form-label">Customer Age</label>
-        <input type="text" class="form-control" name="age" [(ngModel)]="customer.age" placeholder="18">
+        <input type="text" class="form-control" name="age" #age="ngModel" [(ngModel)]="customer.age" placeholder="18"
+            required />
+        <div *ngIf="age.touched && age.invalid">
+            <div *ngIf="age.errors.required">
+                Age is Required.
+            </div>
+        </div>
     </div>
     <div class="mb-3">
         <input type="button" value="Add Customer" class="btn btn-dark" (click)="addCustomer()" />

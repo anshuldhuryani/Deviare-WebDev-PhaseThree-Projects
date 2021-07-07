@@ -1,3 +1,5 @@
+import { RegistrationReactiveComponent } from './registration-reactive/registration-reactive.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'customers', component: CustomersComponent },
   { path: 'customer-detail/:id', component: CustomerDetailComponent },
   { path: 'customer-add', component: CustomerAddComponent },
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'registration-reactive', component: RegistrationReactiveComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
