@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth-guard.service';
 import { MustMatchDirective } from './directives/must-match.directives';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +14,7 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
 import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationReactiveComponent } from './registration-reactive/registration-reactive.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { RegistrationReactiveComponent } from './registration-reactive/registrat
     CustomerAddComponent,
     RegistrationComponent,
     MustMatchDirective,
-    RegistrationReactiveComponent
+    RegistrationReactiveComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { RegistrationReactiveComponent } from './registration-reactive/registrat
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

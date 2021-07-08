@@ -1,3 +1,5 @@
+import { AuthGuard } from './services/auth-guard.service';
+import { LoginComponent } from './login/login.component';
 import { RegistrationReactiveComponent } from './registration-reactive/registration-reactive.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CustomerAddComponent } from './customer-add/customer-add.component';
@@ -11,16 +13,17 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'customers', component: CustomersComponent },
-  { path: 'customer-detail/:id', component: CustomerDetailComponent },
-  { path: 'customer-add', component: CustomerAddComponent },
+  { path: 'customers', component: CustomersComponent, canActivate: [AuthGuard] },
+  { path: 'customer-detail/:id', component: CustomerDetailComponent, canActivate: [AuthGuard] },
+  { path: 'customer-add', component: CustomerAddComponent, canActivate: [AuthGuard] },
   { path: 'registration', component: RegistrationComponent },
   { path: 'registration-reactive', component: RegistrationReactiveComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 

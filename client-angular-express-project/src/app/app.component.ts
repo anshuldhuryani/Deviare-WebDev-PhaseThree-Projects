@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth-guard.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'client-angular-express-project';
+  loginStatus: boolean = false;
+  constructor(private _authGuard: AuthGuard) { }
+
+  logout() {
+    this._authGuard.logout();
+  }
+
+  ngOnInit(): void {
+    this.checkStatus();
+  }
+
+  checkStatus() {
+    if (this._authGuard.isLoggedIn()) {
+      this.loginStatus = true;
+    } else {
+      this.loginStatus = false;
+    }
+  }
+
 }
