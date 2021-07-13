@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+    <%- include("../partials/nav") %>
+        <br /><br />
+        <div class="container">
+            <h2>Update Employee</h2> <br />
+            <form method="POST" action="/employees/update/<%= employee._id %>">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="King Kochhar"
+                        value="<%= employee.name %>" />
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" name="address" placeholder="123, Civil Lines"
+                        value="<%= employee.address %>" />
+                </div>
+                <div class=" mb-3">
+                    <label for="position" class="form-label">Position</label>
+                    <input type="text" class="form-control" name="position" placeholder="Sr. Manager"
+                        value="<%= employee.position %>" />
+                </div>
+                <div class=" mb-3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input type="text" class="form-control" name="salary" placeholder="12000"
+                        value="<%= employee.salary %>" />
+                </div>
+                <div class=" mb-3">
+                    <a href="/employees/<%= employee._id %>" class="btn btn-secondary">Back</a> |
+                    <input type="submit" value="Update Employee" class="btn btn-success"> |
+                    <input type="reset" value="Clear" class="btn btn-danger">
+                </div>
+
+            </form>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+
+    <%- include("../partials/nav") %>
+        <br /><br />
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Details of <%= employee.name %>
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Employee Id</th>
+                                <td>
+                                    <%= employee._id %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Employee Name</th>
+                                <td>
+                                    <%= employee.name %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Employee Address</th>
+                                <td>
+                                    <%= employee.address %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Employee Position</th>
+                                <td>
+                                    <%= employee.position %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Employee Salary</th>
+                                <td>
+                                    <%= employee.salary %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Employee Updated At</th>
+                                <td>
+                                    <%= employee.updated_at %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+
+                    <form method="POST" action="/employees/delete/<%= employee._id %>">
+                        <a href="/employees" class="btn btn-secondary">Go Back</a>
+                        <a href="/employees/edit/<%= employee._id %>" class="btn btn-info">Update</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
