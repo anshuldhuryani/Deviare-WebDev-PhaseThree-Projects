@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h2>Hello World</h2>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- HelloWorld-Example -->
+    <!-- <script>
+        var socket = io();
+    </script> -->
+
+    <!-- EventHandling-Example -->
+    <!-- <script>
+        var socket = io();
+        socket.on('message', (data) => {
+            document.write(data);
+        })
+    </script> -->
+
+    <!-- BroadCast-Example -->
+    <!-- <script>
+        var socket = io();
+        socket.on('broadcast', (data) => {
+            document.body.innerHTML = '';
+            document.write(data.desc);
+        })
+    </script> -->
+
+    <!-- Namespace Example -->
+    <!-- <script>
+        var socket = io('/my-namespace');
+        socket.on('Greeting', (data) => {
+            document.body.innerHTML = '';
+            document.write(data);
+        })
+    </script> -->
+
+    <!-- Rooms(Channels) Example -->
+    <script>
+        var socket = io();
+        socket.on('connectToRoom', function (data) {
+            document.body.innerHTML = '';
+            document.write(data);
+        });
+    </script>
+
+
+
+</body>
+
+</html>

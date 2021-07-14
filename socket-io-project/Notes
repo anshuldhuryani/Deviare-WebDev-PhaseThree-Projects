@@ -1,0 +1,46 @@
+
+Socket Programming with NodeJS:
+
+	Socket.io helps in real-time bidirectional event-based communication.
+	Socket.io is built on top of the Web Sockets API and Node.js.
+	It has two parts:
+		- Client Side Library
+		- Server Side Library
+		
+Applications that can be developed with socket.io:
+
+	1. Instant Messengers
+	2. Push Notifications
+	3. Collaboration Applicationss
+	4. Online Gaming
+	
+----------------------------------------------------
+	
+Namespace:
+
+- Socket.io Namespace means assigning different endpoints or paths.
+- Namespace helps in minimizing the numbers of TCP connections or (resources) 
+    at the same time hence separate concerns withing your application. 
+- Namespaces are generally created on the server side.
+- Default Namespace is the root Namespace i.e. '/'
+
+-----------------------------------------------------
+
+Joining Rooms:
+
+- Within each Namespace, we can also define arbitrary channels that sockets can join or leave.
+- These channels are called rooms.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
